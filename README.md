@@ -1,2 +1,3 @@
 # OOP_labs
-wa
+# Tovisi Otto Sebestyen
+# Info 1 C

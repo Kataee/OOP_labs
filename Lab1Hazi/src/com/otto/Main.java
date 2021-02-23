@@ -50,7 +50,9 @@ public class Main {
 			System.out.println(countBits((i)));
 		}
 
-
+		//4es feladat
+		double[] array = {1.0,2.0,2.5};
+		System.out.printf("A tömb átlaga: %.2f", mean(array)); //az f az nem float? mi a jelölés a double -re?
 	}
 
 	//----------------------------------------
@@ -86,5 +88,18 @@ public class Main {
 			}
 		}
     	return count;
+	}
+
+	//4es feladat
+	public static double mean(double array[]) {
+		if (array.length == 0) {
+			return Double.NaN;
+		}
+		double average=0;
+		for (Double i : array) {
+			average += i;
+		}
+		average /= array.length;
+    	return average;
 	}
 }

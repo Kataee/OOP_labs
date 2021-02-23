@@ -2,6 +2,7 @@ package com.otto;
 
 import java.util.ArrayList;
 import java.lang.Math;
+import java.util.Arrays;
 
 public class Main {
 
@@ -62,6 +63,11 @@ public class Main {
 		//double[] arrayForDeviation = {6.0,2.0,3.0, 1.0};
 		double[] arrayForDeviation = {1.0,4.0,7.0, 2.0, 6.0};
 		System.out.printf("A tömb szórása: %.2f\n", stddev(arrayForDeviation) );
+
+
+		//6os feladat
+		double[] arrayForMax2 = {1.0,2.0,3.0,4.0,5.0,6.0};
+		System.out.println("A 2 legnagyobb elem: " + Arrays.toString(max2(array)));
 	}
 
 	//----------------------------------------
@@ -154,4 +160,36 @@ public class Main {
     	return (sumOfNumbers/length);
 	}
 
+
+
+	//6os feladat
+	public static double[] max2 (double[] array){
+		double[] max ={Double.NEGATIVE_INFINITY,
+				Double.NEGATIVE_INFINITY};
+		if( array.length == 0 ){
+			return max;
+		}
+
+		if (array.length == 1) {
+			double[] maxOf1 = {array[0], array[0]};
+			return maxOf1;
+		}
+
+		double max1 = array[0];
+		double max2 = array[1];
+		for (int i=2; i<array.length-1; i++) {
+			if (max1 < array[i]) { max1 = array[i]; };
+			if (max2 < array[i+1]) { max2 = array[i+1]; };
+		}
+
+		if (max1 > max2) {
+			double temp = max1;
+			max1 = max2;
+			max2 = temp;
+		}
+		//System.out.println("Max1: " + max1);
+		//System.out.println("Max2: " + max2);
+		return new double[]{max1, max2};
+
+	}
 }

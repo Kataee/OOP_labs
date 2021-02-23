@@ -1,5 +1,8 @@
 package com.otto;
 
+import java.util.ArrayList;
+import java.lang.Math;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -51,8 +54,14 @@ public class Main {
 		}
 
 		//4es feladat
-		double[] array = {1.0,2.0,2.5};
-		System.out.printf("A tömb átlaga: %.2f", mean(array)); //az f az nem float? mi a jelölés a double -re?
+		//double[] array = {};
+		double[] array = {6.0,2.0,3.0, 1.0};
+		System.out.printf("A tömb átlaga: %.2f\n", mean(array)); //az f az nem float? mi a jelölés a double -re?
+
+		//5ös feladat
+		//double[] arrayForDeviation = {6.0,2.0,3.0, 1.0};
+		double[] arrayForDeviation = {1.0,4.0,7.0, 2.0, 6.0};
+		System.out.printf("A tömb szórása: %.2f\n", stddev(arrayForDeviation) );
 	}
 
 	//----------------------------------------
@@ -91,7 +100,7 @@ public class Main {
 	}
 
 	//4es feladat
-	public static double mean(double array[]) {
+	public static double mean(double[] array) {
 		if (array.length == 0) {
 			return Double.NaN;
 		}
@@ -102,4 +111,47 @@ public class Main {
 		average /= array.length;
     	return average;
 	}
+
+	//5ös feladat
+	public static double stddev(double[] array) {
+		double arrayAverage = mean(array);  //function from 4es feladat
+
+		double distance;
+		ArrayList<Double> distanceArray = new ArrayList<Double>();
+		for (double i : array) {
+			distance = distance(i, arrayAverage);
+			distanceArray.add(distance);
+			System.out.printf("%f ", distance);
+
+		}
+
+		double sumOfDistance = sumOfDistance(distanceArray);
+		System.out.printf("Összeg: %f ", sumOfDistance);
+		double finding = finding(array.length, sumOfDistance);
+		double result = Math.sqrt(finding);
+		//System.out.printf("A tömb szórása: ", result);
+
+		return result;
+	}
+
+	//számoljuk ki két szám távolságát
+	public static double distance (double number, double average) {
+		double distance = Math.pow( (number - average), 2);
+		return distance;
+	}
+
+	//számoljuk ki a távolságok összegét
+	public static double sumOfDistance (ArrayList<Double> array) {
+    	double sumOfNumbers = 0;
+    	for (Double i : array) {
+    		sumOfNumbers += i;
+		}
+    	return sumOfNumbers;
+	}
+
+	//osszuk el az összeget az elemek számával
+	public static double finding (int length, double sumOfNumbers) {
+    	return (sumOfNumbers/length);
+	}
+
 }

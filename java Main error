@@ -1,0 +1,7 @@
+C:\Users\Kataee\Documents\Class2\Java_OOP\OOP_labs\Lab1Hazi\src\com\otto>javac Main.java
+
+C:\Users\Kataee\Documents\Class2\Java_OOP\OOP_labs\Lab1Hazi\src\com\otto>java Main
+Error: Could not find or load main class Main
+Caused by: java.lang.NoClassDefFoundError: com/otto/Main (wrong name: Main)
+
+C:\Users\Kataee\Documents\Class2\Java_OOP\OOP_labs\Lab1Hazi\src\com\otto>

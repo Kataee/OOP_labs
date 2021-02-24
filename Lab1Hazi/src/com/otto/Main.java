@@ -20,8 +20,9 @@ public class Main {
 		String keresztNev = "Pista";
 
 		//I NEED HALP
-		//String monogram = vezetekNev.charAt(0) + keresztNev.charAt(0);
-		//System.out.println(monogram); //ez miért dolgozik számokkal karakterek helyett?
+		String monogram = "";
+		monogram = vezetekNev.charAt(0) + keresztNev.charAt(0) + "";
+		System.out.println(monogram); //ez miért dolgozik számokkal karakterek helyett? //tegyél hozzá még egy üres stringet
 
 		//3. feladat
 		String alma = "Almafa";
@@ -30,7 +31,7 @@ public class Main {
 		}
 
 		//4. feladat
-		String monogram = ""; //redeclaration, bc the code above is commented out
+		monogram = ""; //redeclaration, bc the code above is commented out //no redeclaration anymore
 		String name = "Kis Pista Babos Panna";
 		String[] nameSplit = name.split(" ");
 		for (String a : nameSplit) {

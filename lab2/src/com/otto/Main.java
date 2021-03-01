@@ -42,7 +42,7 @@ public class Main {
         System.out.println(account2.getAccountNumber() + ": " + account2.getBalance());
         account2.deposit(2000);
         System.out.println(account2.getAccountNumber() + ": " + account2.getBalance());
-
+//
     }
 }
 

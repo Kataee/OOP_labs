@@ -1,5 +1,7 @@
 package com.otto;
 
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -42,7 +44,31 @@ public class Main {
         System.out.println(account2.getAccountNumber() + ": " + account2.getBalance());
         account2.deposit(2000);
         System.out.println(account2.getAccountNumber() + ": " + account2.getBalance());
-//
+
+        //EXERCIESE 2
+        Rectangle[] rectangles = new Rectangle[ 10 ];
+        Random rand = new Random();
+        double length;
+        double width;
+
+        for (int i=0; i<10; ++i) {
+            length = 1 + rand.nextInt(10);
+            width = 1 + rand.nextInt(10);
+            rectangles[i] = new Rectangle(length, width);
+        }
+
+        for (int i=0; i<10; ++i) {
+            System.out.printf("%.2f %.2f %.2f %.2f\n", rectangles[i].getLength(), rectangles[i].getWidth(), rectangles[i].getArea(), rectangles[i].getPerimeter());
+        }
+
+        double totalArea=0;
+
+        for (int i=0; i<10; ++i) {
+            totalArea += rectangles[i].getArea();
+        }
+
+        System.out.println("A teljes terulet: " + totalArea);
+
     }
 }
 

@@ -47,7 +47,11 @@ public class BankAccount {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-    public void deposit(double deposit) { this.balance += deposit; }
+    public void deposit(double deposit) {
+        balance = Math.abs(balance);
+        this.balance += deposit;
+
+    }
     public boolean withdraw(double withdrawal) {
         if (getBalance() > withdrawal) {
             balance -= withdrawal;

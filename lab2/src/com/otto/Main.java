@@ -69,6 +69,8 @@ public class Main {
 
         System.out.println("A teljes terulet: " + totalArea);
 
+        System.out.println("year: " + dateUtil.leapYear(2400));
+
     }
 }
 

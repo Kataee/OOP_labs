@@ -2,6 +2,7 @@ package com.otto;
 
 import java.util.Random;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -70,6 +71,34 @@ public class Main {
         System.out.println("A teljes terulet: " + totalArea);
 
         System.out.println("year: " + dateUtil.leapYear(2400));
+        System.out.println("date: " + dateUtil.isValidDate("2021-02-29"));
+
+        MyDate date1 = new MyDate(2024, 2,29);
+        System.out.println(date1.getYear());
+        date();
+
+    }
+
+    public static void date() {
+        Random rand = new Random();
+        int year, month, day, numberOfInvalid=0;
+
+
+        for (int i=0; i<3; ++i) {
+            year = 1 + rand.nextInt(2021);
+            month = 1 + rand.nextInt(12);
+            day = 1 + rand.nextInt(31);
+            String date = year + "-" + month + "-" + day;
+            if (dateUtil.isValidDate(date)) {
+                System.out.println(date);
+            } else {
+                //to print invalid dates
+                //System.out.println("FALSE   " + date);
+                numberOfInvalid++;
+            }
+        }
+        System.out.println("Will be false for years less than 1000");
+        System.out.println("Total invalid dates: " + numberOfInvalid);
 
     }
 }

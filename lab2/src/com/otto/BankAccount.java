@@ -18,26 +18,43 @@ public class BankAccount {
         this.accountNumber = "XYZ";
     }
 
-    public BankAccount (double balance, String accountNumber) {
-        this.balance = balance;
+    //the line below is from class
+    //public BankAccount (double balance, String accountNumber) {
+
+    public BankAccount (String accountNumber) {
+        //the line below is from class
+        //this.balance = balance;
+
+        this.balance = 0;
         this.accountNumber = accountNumber;
     }
 
     //Getters
 
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
     public double getBalance() {
         return balance;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
-    }
+
 
     //Setters
 
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+    public void deposit(double deposit) { this.balance += deposit; }
+    public boolean withdraw(double withdrawal) {
+        if (getBalance() > withdrawal) {
+            balance -= withdrawal;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void setAccountNumber (String accountNumber) {

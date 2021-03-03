@@ -1,5 +1,8 @@
 package com.otto;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.sql.SQLOutput;
 import java.util.Random;
 
 
@@ -8,9 +11,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-        ex1();
+        //ex1();
         ex2();
-        date();
+        //date();
 
     }
 
@@ -52,10 +55,13 @@ public class Main {
             length = 1 + rand.nextInt(10);
             width = 1 + rand.nextInt(10);
             rectangles[i] = new Rectangle(length, width);
+            System.out.println("Teglalpok szama: " + Rectangle.letrehozottTegalapokSzama);
         }
+
 
         for (int i=0; i<10; ++i) {
             System.out.printf("%.2f %.2f %.2f %.2f\n", rectangles[i].getLength(), rectangles[i].getWidth(), rectangles[i].getArea(), rectangles[i].getPerimeter());
+
         }
 
         double totalArea=0;
@@ -66,14 +72,16 @@ public class Main {
 
         System.out.println("A teljes terulet: " + totalArea);
 
-        System.out.println("year: " + dateUtil.leapYear(2400));
-        System.out.println("date: " + dateUtil.isValidDate("2021-02-29"));
 
-        MyDate date1 = new MyDate(2024, 2,29);
-        System.out.println(date1.getYear());
     }
 
     public static void date() {
+        System.out.println("year: " + DateUtil.leapYear(2400));
+        System.out.println("date: " + DateUtil.isValidDate("2021-02-29"));
+
+        MyDate date1 = new MyDate(2024, 2,29);
+        System.out.println(date1.getYear());
+
         Random rand = new Random();
         int year, month, day, numberOfInvalid=0;
 
@@ -83,7 +91,7 @@ public class Main {
             month = 1 + rand.nextInt(12);
             day = 1 + rand.nextInt(31);
             String date = year + "-" + month + "-" + day;
-            if (dateUtil.isValidDate(date)) {
+            if (DateUtil.isValidDate(date)) {
                 System.out.println(date);
             } else {
                 //to print invalid dates

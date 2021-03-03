@@ -7,7 +7,7 @@ public class MyDate {
 
     public MyDate(int year, int month, int day) {
         String date = year + "-" + month + "-" + day;
-        if (dateUtil.isValidDate(date)) {
+        if (DateUtil.isValidDate(date)) {
             this.year = year;
             this.month = month;
             this.day = day;

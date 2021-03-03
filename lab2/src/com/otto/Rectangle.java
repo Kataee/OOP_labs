@@ -16,6 +16,7 @@ public class Rectangle {
     public Rectangle(double length, double width) {
         this.length = length;
         this.width = width;
+        letrehozottTegalapokSzama +=1;
     }
 
     //Getters
@@ -35,6 +36,8 @@ public class Rectangle {
     public double getWidth() {
         return width;
     }
+
+    public static int letrehozottTegalapokSzama = 0;
 
     /*
     @Override

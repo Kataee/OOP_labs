@@ -7,7 +7,7 @@ import java.time.format.ResolverStyle;
 
 
 
-public class dateUtil {
+public class DateUtil {
     //Methods
 
     public static boolean leapYear (int year) {
